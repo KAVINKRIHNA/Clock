@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+ body {
+    margin: 0;
+    padding: 0;
+    background-color: #282828;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 290px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60px;
+    z-index: 2;
+}
+
+.clock {
+    position: relative;
+    background-color: gray;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 7px solid #282828;
+    box-shadow: 4px 4px 10px rgba(0,0,0,.3);
+    margin: 50px auto;
+    
+}
+
+.numbers div {
+    position: absolute;
+    font-size: 55px;
+    font-weight: bold;
+    color: #f4f6f8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+}
+
+.twelve{
+   top: 6px;
+   left: 50%;
+   transform: translateX(-50%); 
+}
+
+.one{
+    right: 6px;
+    top: 10%;
+    left: 80%;
+    right: 10%;
+    transform: translateY(-92%);
+    transform: translateX(-70%);
+}
+
+.two{
+    right: 6px;
+    top: 25%;
+    left: 90%;
+    right: 5%;
+    transform: translateY(-70%);
+    transform: translateX(-80%);
+}
+
+.three{
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.four{
+    right: 6px;
+    bottom: 25%;
+    left: 90%;
+    right: 5%;
+    transform: translateY(-30%);
+    transform: translateX(-80%);
+}
+
+.five{
+    right: 6px;
+    bottom: 10%;
+    left: 80%;
+    right: 10%;
+    transform: translateY(-8%);
+    transform: translateX(-70%);
+}
+
+.six{
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.seven{
+    left: 6px;
+    bottom: 10%;
+    right: 100%;
+    left: 20%;
+    transform: translateY(-10%);
+    transform: translateX(-40%);
+}
+
+.eight{
+    left: 6px;
+    bottom: 25%;
+    right: 90%;
+    left: 8%;
+    transform: translateY(-30%);
+    transform: translateX(-20%);
+
+}
+
+.nine{
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ten{
+    left: 6px;
+    top: 25%;
+    right: 80%;
+    left: 8%;
+    transform: translateY(-70%);
+    transform: translateX(-20%);
+}
+
+.eleven{
+    left: 6px;
+    top: 10%;
+    right: 100%;
+    left: 20%;
+    transform: translateY(-10%);
+    transform: translateX(-40%);
+}
+
+.arrows{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrows::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #282828;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+    z-index: 4;
+}
+
+.arrows div{
+    background-color: rgb(244, 11, 228);
+    width: 7px;
+    position: absolute;
+    height: 200px;
+    transform-origin: bottom center;
+    bottom: 50%;
+    z-index: 3;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.arrows .hour{
+    height: 150px;
+    transform: rotate(30deg);
+    background-color: chartreuse;
+}
+
+.arrows .second{
+    transform: rotate(250deg);
+    background-color: goldenrod;
+}
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="numbers">
+            <div class="twelve">12</div>
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+            <div class="nine">9</div>
+            <div class="ten">10</div>
+            <div class="eleven">11</div>
+        </div>
+        <div class="arrows">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab52da00-71c2-4ae2-bc2a-3b28214b02c9/dfc2945-a7640123-159b-4ee0-b0dc-de0247827694.png/v1/fill/w_1280,h_1280,strp/lettermark_gradient_logo_design__letter_k_png_logo_by_rahatislam11_dfc2945-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2FiNTJkYTAwLTcxYzItNGFlMi1iYzJhLTNiMjgyMTRiMDJjOVwvZGZjMjk0NS1hNzY0MDEyMy0xNTliLTRlZTAtYjBkYy1kZTAyNDc4Mjc2OTQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.fABrmtXNux7_fbG7vXgll8BycYgHIKZFvDilI2p2Uqs" alt="k-logo">
+    </div>
+    <script>
+        const hourEl = document.querySelector(".hour");
+        const minuteEl = document.querySelector(".minute");
+        const secondEl = document.querySelector(".second");
+
+        function updateclock() {
+            const currentDate = new Date();
+            const hour = currentDate.getHours();
+            const minute = currentDate.getMinutes();
+            const second = currentDate.getSeconds();
+            const hourDeg = (hour / 12) * 360;
+            hourEl.style.transform = `rotate(${hourDeg}deg)`;
+            const minuteDeg = (minute / 60) * 360;
+            minuteEl.style.transform = `rotate(${minuteDeg}deg)`;
+            const secondDeg = (second / 60) * 360;
+            secondEl.style.transform = `rotate(${secondDeg}deg)`;
+        }
+
+        setInterval(updateclock, 1000);
+    </script>
+</body>
+</html>
